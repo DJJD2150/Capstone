@@ -14,5 +14,5 @@ class Movie(models.Model):
     genre = models.TextField()
 
     def __str__(self):
-        return f"{self.title} - {self.actors}"
+        return self.title
 

@@ -1,8 +1,8 @@
 {% if request.user.is_authenticated != True %}
 <h1>Welcome!</h1>
-</br>
+<br/>
 <h3>Please sign in</h3>
-</br>
+<br/>
 {% endif %}
 <form action="" method="post">
     {% csrf_token %} {{ form.as_p }}
