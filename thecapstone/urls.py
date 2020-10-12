@@ -18,6 +18,7 @@ from django.urls import path
 from authentication.views import index, signup_view, login_view, logout_view
 from django.conf import settings
 from django.conf.urls.static import static
+from reviews.views import add_post, like_view, dislike_view, upvote, downvote, votes_view
 
 
 urlpatterns = [
@@ -25,6 +26,12 @@ urlpatterns = [
     path('login/', login_view),
     path('logout/', logout_view),
     path('signup/', signup_view),
+    path('addreview/', add_post),
+    path('likes/', like_view),
+    path('dislikes/', dislike_view),
+    path('upvote/<int:post_id>/', upvote),
+    path('downvote/<int:post_id>/', downvote),
+    path('sorted/', votes_view),
     path('admin/', admin.site.urls),
 ]
 
