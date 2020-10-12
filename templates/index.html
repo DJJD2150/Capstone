@@ -1,2 +1,6 @@
 <a href="/">Home</a> <a href="signup">Sign Up</a> <a href="login/">Login</a> <a href="logout/">Logout</a>
-
+<a href="/sorted/">Sorted Posts</a> | <a href="/likes/">Likes</a> | <a
+    href="/dislikes/">Dislikes</a> | <a href="/addreview/">Add Review</a>
+<h3>Username: {{ request.user.username }}</h3>
+<h1>Display Name: {{ request.user.display_name }} </h1>
+<h2>Following: {{ request.user.follows }}</h2>
