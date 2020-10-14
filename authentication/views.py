@@ -10,10 +10,10 @@ def index(request):
 
 def signup_view(request):
     if request.method == "POST":
-        form = SignUpForm(request.POST)
+        form = SignUpForm(request.POST, request.FILES)
         if form.is_valid():
             data = form.cleaned_data
-            new_user = BaseUser.objects.create_user(username=data.get("username"), password=data.get("password"), display_name=data.get("display_name"))
+            new_user = BaseUser.objects.create_user(username=data.get("username"), password=data.get("password"), display_name=data.get("display_name"), user_pic=data.get("user_pic"))
             login(request, new_user)
             return HttpResponseRedirect(reverse("homepage"))
     form = SignUpForm()
@@ -26,7 +26,7 @@ def login_view(request):
         if form.is_valid():
             data = form.cleaned_data
             user = authenticate(request, username=data.get(
-                "email"), password=data.get("password"))
+                "username"), password=data.get("password"))
             if user:
                 login(request, user)
                 # return HttpResponseRedirect(request.GET.get('next', reverse('homepage')))

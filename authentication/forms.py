@@ -5,7 +5,7 @@ from imdbuser.models import BaseUser
 class SignUpForm(forms.ModelForm):
     class Meta:
         model = BaseUser
-        fields = ['username', 'password', 'display_name']
+        fields = ['username', 'password', 'display_name', 'user_pic']
 
 
 class LoginForm(forms.Form):
