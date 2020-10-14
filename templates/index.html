@@ -4,3 +4,9 @@
 <h3>Username: {{ request.user.username }}</h3>
 <h1>Display Name: {{ request.user.display_name }} </h1>
 <h2>Following: {{ request.user.follows }}</h2>
+<div>
+{% if request.user.user_pic %}
+<img height= 100px width=100px src="{{ request.user.user_pic.url }}" alt="{{ request.user.username }}" />
+
+{% endif %}
+</div>

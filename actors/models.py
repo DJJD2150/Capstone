@@ -7,5 +7,5 @@ class Actor(models.Model):
     photo = models.ImageField(upload_to='images/', null=True, blank=True)
     # filmography = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
