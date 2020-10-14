@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project- IMDB Clone | {{ movie.title }}</title>
+</head>
+<body>
+    <h1>Movie Details | {{movie.title}}</h1>
+    {{ movie.title }}
+    <br/>
+    {{ movie.director }}
+    <br/>
+    {{ movie.description }}
+    <br/>
+    {{ movie.date_released }}
+    <br/>
+    {{ movie.photo }}
+    <br/>
+    {{ movie.genre }}
+    <br/>
+    <ul>
+        {% for actor in actors %}
+            <li><a href="/actors/{{actor.id}}">{{ actor }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -4,7 +4,7 @@ from imdbuser.models import BaseUser
 from authentication.forms import SignUpForm, LoginForm
 from thecapstone.settings import AUTH_USER_MODEL
 
-def index(request):
+def index_view(request):
     my_user = BaseUser.objects.all()
     return render(request, "index.html", {'my_user': my_user, "output": AUTH_USER_MODEL})
 

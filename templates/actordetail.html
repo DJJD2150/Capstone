@@ -1,0 +1,11 @@
+<div>
+    {{ actor.name }}<br>
+    {{ actor.bio }}<br>
+    {{ actor.photo }}<br>
+    Films:
+    <ul>
+        {% for movie in filmography %}
+            <li><a href="/movies/{{ movies.id }}/">{{ movies.title }}</a></li>
+        {% endfor %}
+    </ul>
+<div>
